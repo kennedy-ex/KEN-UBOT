@@ -19,7 +19,7 @@ from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
 from userbot import ALIVE_NAME
 from userbot import CMD_HELP
-from userbot.eventd import register
+from userbot.events import register
 
 
 async def get_call(event):
