@@ -1,26 +1,9 @@
-# Copyright (C) 2020 Adek Maulana
-#
-# SPDX-License-Identifier: GPL-3.0-or-later
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-
 import os
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from userbot import TEMP_DOWNLOAD_DIRECTORY, GOOGLE_CHROME_BIN, CHROME_DRIVER
+from userbot import CHROME_DRIVER, GOOGLE_CHROME_BIN, TEMP_DOWNLOAD_DIRECTORY
 
 
 async def chrome(chrome_options=None):
@@ -28,10 +11,9 @@ async def chrome(chrome_options=None):
         chrome_options = await options()
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.mkdir(TEMP_DOWNLOAD_DIRECTORY)
-    prefs = {'download.default_directory': TEMP_DOWNLOAD_DIRECTORY}
-    chrome_options.add_experimental_option('prefs', prefs)
-    return webdriver.Chrome(executable_path=CHROME_DRIVER,
-                            options=chrome_options)
+    prefs = {"download.default_directory": TEMP_DOWNLOAD_DIRECTORY}
+    chrome_options.add_experimental_option("prefs", prefs)
+    return webdriver.Chrome(executable_path=CHROME_DRIVER, options=chrome_options)
 
 
 async def options():
