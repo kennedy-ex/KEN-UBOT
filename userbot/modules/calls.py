@@ -1,89 +1,117 @@
-# Thanks Full To Team Ultroid
-# Ported By Vcky @VckyouuBitch + @MaafGausahSokap
-# Copyright (c) 2021 Geez - Projects
-# Geez - Projects https://github.com/Vckyou/Geez-UserBot
-# RAM - UBOT https://github.com/ramadhani892/RAM-UBOT
-# Ini Belum Ke Fix Ya Bg :')
-# Ambil aja gapapa tp Gaguna kaya hidup lu Woakkakaka
+# Copyright (C) 2021 TeamUltroid
+#
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# PLease read the GNU Affero General Public License in
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+#
+# Ported by @mrismanaziz
+# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
+# t.me/SharingUserbot & t.me/Lunatic0de
+#
+# Kalo mau ngecopas, jangan hapus credit ya goblok
 
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
 from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
+from telethon.tl.functions.phone import EditGroupCallTitleRequest as settitle
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
+from userbot import ALIVE_NAME
 from userbot import CMD_HELP
-from userbot.events import register
-
-NO_ADMIN = "`You`re not admin in here.`"
+from userbot.eventd import register
 
 
 async def get_call(event):
-    rambot = await event.client(getchat(event.chat_id))
-    rama = await event.client(getvc(rambot.full_chat.call))
-    return rama.call
+    mm = await event.client(getchat(event.chat_id))
+    xx = await event.client(getvc(mm.full_chat.call))
+    return xx.call
 
 
 def user_list(l, n):
     for i in range(0, len(l), n):
-        yield l[i: i + n]
+        yield l[i : i + n]
 
 
-@register(outgoing=True, groups_only=True, pattern=r"^\.startvc$")
-async def start_voice(td):
-    chat = await td.get_chat()
+@register(outgoing=True, pattern=r"^\.startvc$")
+async def start_voice(c):
+    chat = await c.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
     if not admin and not creator:
-        return await td.edit(NO_ADMIN)
+        await c.edit(f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
+        return
     try:
-        await td.client(startvc(td.chat_id))
-        await td.edit("`Voice chat turned on, dont open your cam kontol...`")
+        await c.client(startvc(c.chat_id))
+        await c.edit("`Voice Chat Started...`")
     except Exception as ex:
-        await td.edit(f"`{str(ex)}`")
+        await c.edit(f"**ERROR:** `{ex}`")
 
 
-@register(outgoing=True, groups_only=True, pattern=r"^\.stopvc$")
-async def stop_voice(td):
-    chat = await td.get_chat()
+@register(outgoing=True, pattern=r"^\.stopvc$")
+async def stop_voice(c):
+    chat = await c.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
     if not admin and not creator:
-        return await td.edit(NO_ADMIN)
+        await c.edit(f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
+        return
     try:
-        await td.client(stopvc(await get_call(td)))
-        await td.edit("`Stoped the voice call...`")
+        await c.client(stopvc(await get_call(c)))
+        await c.edit("`Voice Chat Stopped...`")
     except Exception as ex:
-        await td.edit(f"`{str(ex)}`")
+        await c.edit(f"**ERROR:** `{ex}`")
 
 
-@register(outgoing=True, groups_only=True, pattern=r"^\.vcinvite")
-async def vc_invite(td):
-    await td.edit("`Memulai Invite member group...`")
+@register(outgoing=True, pattern=r"^\.vcinvite$")
+async def _(c):
+    await c.edit("`Inviting Members to Voice Chat...`")
     users = []
     z = 0
-    async for x in td.client.iter_participants(td.chat_id):
+    async for x in c.client.iter_participants(c.chat_id):
         if not x.bot:
             users.append(x.id)
-    hmm = list(user_list(users, 6))
-    for p in hmm:
+    kontol = list(user_list(users, 6))
+    for p in kontol:
         try:
-            await td.client(invitetovc(call=await get_call(td), users=p))
+            await c.client(invitetovc(call=await get_call(c), users=p))
             z += 6
         except BaseException:
             pass
-    await td.edit(f"`Menginvite {z} Member`")
+    await c.edit(f"`{z}` **Orang Berhasil diundang ke VCG**")
+
+
+@register(outgoing=True, pattern=r"^\.vctitle$")
+async def change_title(e):
+    title = e.pattern_match.group(1)
+    chat = await e.get_chat()
+    admin = chat.admin_rights
+    creator = chat.creator
+
+    if not title:
+        return await e.edit("**Silahkan Masukan Title Obrolan Suara Grup**")
+
+    if not admin and not creator:
+        await e.edit(f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
+        return
+    try:
+        await e.client(settitle(call=await get_call(e), title=title.strip()))
+        await e.edit(f"**Berhasil Mengubah Judul VCG Menjadi** `{title}`")
+    except Exception as ex:
+        await e.edit(f"**ERROR:** `{ex}`")
 
 
 CMD_HELP.update(
     {
-        "ramcalls": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.startvc`\
+        "vcalls": "Command: `.startvc`\
          \n↳ : Memulai Obrolan Suara dalam Group.\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stopvc`\
+         \nCommand: `.vctitle`\
+         \n↳ : `Mengganti judul vcg.`\
+         \nCommand: `.stopvc`\
          \n↳ : `Menghentikan Obrolan Suara Pada Group.`\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.vcinvite`\
+         \nCommand: `.vcinvite`\
          \n↳ : Invite semua member yang berada di group. (Kadang bisa kadang kaga)."
     }
 )
