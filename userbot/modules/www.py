@@ -5,6 +5,7 @@
 """ Userbot module containing commands related to the \
     Information Superhighway (yes, Internet). """
 
+import random
 import asyncio
 import time
 import redis
