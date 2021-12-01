@@ -22,7 +22,7 @@ absen = [
     "**Nande?😕**",
     "**Hadir ganteng**😎",
     "**Hadir bosku**",
-    "**Siap hadir**"
+    "**Siap hadir**",
 ]
 
 
