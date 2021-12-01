@@ -16,11 +16,13 @@ from userbot import CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
 
 
-absen = ["**Hadir Om👋**",
-         "**Nande?😕**",
-         "**Hadir ganteng**😎",
-         "**Hadir bosku**",
-         "**Siap hadir**"
+absen = [
+    "**Hadir Om👋**"
+    "**Nande?😕**",
+    "**Hadir ganteng**😎",
+    "**Hadir bosku**",
+    "**Siap hadir**"
+]
 
 
 async def get_readable_time(seconds: int) -> str:
