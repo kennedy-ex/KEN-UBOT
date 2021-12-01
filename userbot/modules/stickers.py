@@ -24,8 +24,11 @@ from userbot.events import register
 
 
 KANGING_STR = [
-    "Lagi Curry Tikel Ini Ke Pack Anda Tuan",
-    "Lagi Curry Tikel Ini Ke Pack Anda Tuan",
+    "`Lagi Curry Tikel Ini Ke Pack Anda Tuan`",
+    "`Keren juga ni tikel, colong ahh`",
+    "`Gua curry yee tikel lu`",
+    "`Simsalabim ada di pack gua`",
+    "`Sabi lah gua ambil`",
 ]
 
 
