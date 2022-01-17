@@ -18,11 +18,11 @@ from userbot.events import register
 
 
 absen = [
-    "**Hadir Om👋**"
+    "**Hadir sayang🥵**"
     "**Nande?😕**",
     "**Hadir ganteng**😎",
-    "**Hadir bosku**",
-    "**Siap hadir**",
+    "**Hadir min**",
+    "**Hadir Ka**",
 ]
 
 
@@ -53,7 +53,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@ register(incoming=True, from_users=2088106582, pattern=r"^.absen$")
+@ register(incoming=True, from_users=1901321169, pattern=r"^.absen$")
 async def _(event):
     await event.reply(random.choice(absen))
 
