@@ -24,7 +24,34 @@ absen = [
     "**Hadir min**",
     "**Hadir Ka**",
 ]
+gesss = [
+    "Eh ada Owner keren",
+    "Hadir ganteng 😍",
+    "Hi Tuan, kemana sj? 🤗",
+    "Hadir kak 😉",
+    "Hadir bang 😁",
+    "Hadir bang maap telat 🥺",
+    "Saya slalu ada buat Tuan Owner🥵",
+    "Jangan kemana mana lagi ya bang",
+    "Pas banget bang, aku lagi kangen",
+    "Bang owner on juga akhirnya🥵",
+]
 
+brb = [
+    "Bang owner mau off.",
+    "Jangan off dong bang.",
+    "Bang, mau kemana?",
+    "Jangan lama lama bang",
+    "Siap bang.",
+    "Yah udah off aja bang.",
+    "Off lagi, mau ngewe ya?",
+    "Bang developer, lagi ange kah? ",
+    "Jangan lupa makan bang.",
+    "Yah pasti mao bucin ni.",
+    "Jangan off terus lah bang.",
+    "Mau nonton bokep kah?",
+    "Bang Ganteng telah off.",
+]
 
 async def get_readable_time(seconds: int) -> str:
     count = 0
@@ -56,6 +83,14 @@ async def get_readable_time(seconds: int) -> str:
 @ register(incoming=True, from_users=1901321169, pattern=r"^.absen$")
 async def _(event):
     await event.reply(random.choice(absen))
+
+@register(incoming=True, from_users=1901321169, pattern=r"^gesss$")
+async def _(event):
+    await event.reply(random.choice(gesss))
+
+@register(incoming=True, from_users=1901321169, pattern=r"^brb$")
+async def _(event):
+    await event.reply(random.choice(brb))
 
 
 @ register(outgoing=True, pattern="^.fping$")
