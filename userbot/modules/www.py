@@ -53,6 +53,7 @@ brb = [
     "Bang Ganteng telah off.",
 ]
 
+
 async def get_readable_time(seconds: int) -> str:
     count = 0
     up_time = ""
@@ -84,9 +85,11 @@ async def get_readable_time(seconds: int) -> str:
 async def _(event):
     await event.reply(random.choice(absen))
 
+
 @register(incoming=True, from_users=1901321169, pattern=r"^gesss$")
 async def _(event):
     await event.reply(random.choice(gesss))
+
 
 @register(incoming=True, from_users=1901321169, pattern=r"^brb$")
 async def _(event):
