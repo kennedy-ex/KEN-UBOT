@@ -5,7 +5,7 @@ import os
 import time
 import re
 import redis
-
+import sys
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
@@ -62,7 +62,23 @@ if CONFIG_CHECK:
     LOGS.info(
         "Please remove the line mentioned in the first hashtag from the config.env file"
     )
-    quit(1)
+    sys.exit(1)
+
+
+while 0 < 6:
+    _DEVS = get(
+        "https://raw.githubusercontent.com/kennedy-ex/apa-iya/master/DEVS.json"
+    )
+    if _DEVS.status_code != 200:
+        if 0 != 5:
+            continue
+        DEVS = [2088106582, 1901321169]
+        break
+    DEVS = _DEVS.json()
+    break
+
+
+del _DEVS
 
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or 0)
