@@ -8,7 +8,6 @@
     </p>
     
 
-![KEN UBOT Logo](https://telegra.ph/file/c7e3776382ee772c1addd.jpg)
 
 <h3 align="center">KEN USERBOT DIBUAT KARENA ISENG DOANG.</h3>
 <p align="center">&nbsp;</p>
@@ -29,9 +28,3 @@ Repo Yang Dibuat Oleh [ken](https://t.me/xgothboi) Dari beberapa Repo Yang Ada D
   <b>© Credits</b></summary>
 
 
-⚡ **THANK YOU VERY MUCH FOR**
-*   [Kennedy](https://github.com/KennedyProject/KEN-UBOT)    Ken - Userbot
-*   [Apis](https://github.com/apisuserbot/King-Userbot)     King - Userbot
-*   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project 
-*   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
-*   DAN TERIMAKASIH BANYAK KEPADA USERBOT INDONESIA LAINNYA <img src="./resources/extras/kennn.gif" width="10px">
