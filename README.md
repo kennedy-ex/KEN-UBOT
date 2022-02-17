@@ -9,7 +9,7 @@
     
 
 
-<h3 align="center">KEN USERBOT DIBUAT KARENA ISENG DOANG.</h3>
+<h3 align="center"> DIBUAT KARENA ISENG DOANG.</h3>
 <p align="center">&nbsp;</p>
 
 ### Repo KEN UBOT
