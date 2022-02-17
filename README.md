@@ -1,4 +1,4 @@
-<h1 align="center"><img src="./resources/extras/kenn.gif" width="20px">    KEN - UBOT    <img src="./resources/extras/kenn.gif" width="20px"></h1>
+<h1 align="center"><img src="./resources/extras/kenn.gif" width="20px">    U    <img src="./resources/extras/kenn.gif" width="20px"></h1>
 
 <p align="center">
     <a href="https://github.com/KennedyProject/KEN-UBOT/commits/KEN-UBOT"><img src="https://img.shields.io/github/last-commit/KennedyProject/KEN-UBOT?color=ff0000&logo=github&logoColor=ffffff&style=for-the-badge" /></a>
