@@ -1,12 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
-#
-# inline credit @keselekpermen69
-# Recode by @mrismanaziz
-# t.me/SharingUserbot
-#
 """ Userbot initialization. """
 
 import logging
@@ -95,7 +86,7 @@ if CONFIG_CHECK:
 
 while 0 < 6:
     _DEVS = get(
-        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/DEVS.json"
+        "https://raw.githubusercontent.com/kennedy-ex/apa-iya/master/DEVS.json"
     )
     if _DEVS.status_code != 200:
         if 0 != 5:
@@ -142,8 +133,8 @@ CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Support
-GROUP = os.environ.get("GROUP", "SharingUserbot")
-CHANNEL = os.environ.get("CHANNEL", "Lunatic0de")
+GROUP = os.environ.get("GROUP", "emikosupport")
+CHANNEL = os.environ.get("CHANNEL", "kennedyproject")
 
 # Heroku Credentials for updater.
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -158,7 +149,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/mrismanaziz/Man-Userbot.git"
+    "UPSTREAM_REPO_URL", "https://github.com/kennedy-ex/KEN-UBOT.git"
 )
 
 # Custom Name Sticker Pack
@@ -189,16 +180,16 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 ALIVE_TEKS_CUSTOM = os.environ.get("ALIVE_TEKS_CUSTOM", "Hey, I am alive.")
 
 # Default .alive name
-ALIVE_NAME = os.environ.get("ALIVE_NAME", "Man")
+ALIVE_NAME = os.environ.get("ALIVE_NAME", "Ken")
 
 # Custom Emoji Alive
 ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡️")
 
 # Custom Emoji Alive
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "✘")
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "×")
 
 # Custom icon HELP
-ICON_HELP = os.environ.get("ICON_HELP", "❉")
+ICON_HELP = os.environ.get("ICON_HELP", "×")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -271,21 +262,21 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 # Jangan di hapus Nanti ERROR
 while 0 < 6:
     _BLACKLIST = get(
-        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/manblacklist.json"
+        "https://raw.githubusercontent.com/kennedy-ex/apa-iya/master/kenblacklist.json"
     )
     if _BLACKLIST.status_code != 200:
         if 0 != 5:
             continue
-        blacklistman = []
+        blacklistken = []
         break
-    blacklistman = _BLACKLIST.json()
+    blacklistken = _BLACKLIST.json()
     break
 
 del _BLACKLIST
 
 while 0 < 6:
     _WHITELIST = get(
-        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/whitelist.json"
+        "https://raw.githubusercontent.com/kennedy-ex/apa-iya/master/whitelist.json"
     )
     if _WHITELIST.status_code != 200:
         if 0 != 5:
@@ -301,7 +292,7 @@ del _WHITELIST
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "ManUserBot"
+    session = "KenUbot"
 try:
     bot = TelegramClient(
         session=session,
@@ -318,7 +309,7 @@ except Exception as e:
 
 if STRING_2:
     session2 = StringSession(str(STRING_2))
-    MAN2 = TelegramClient(
+    APP2 = TelegramClient(
         session=session2,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -326,14 +317,14 @@ if STRING_2:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py2 = PyTgCalls(MAN2)
+    call_py2 = PyTgCalls(APP2)
 else:
-    MAN2 = None
+    APP2 = None
 
 
 if STRING_3:
     session3 = StringSession(str(STRING_3))
-    MAN3 = TelegramClient(
+    APP3 = TelegramClient(
         session=session3,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -341,14 +332,14 @@ if STRING_3:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py3 = PyTgCalls(MAN3)
+    call_py3 = PyTgCalls(APP3)
 else:
-    MAN3 = None
+    APP3 = None
 
 
 if STRING_4:
     session4 = StringSession(str(STRING_4))
-    MAN4 = TelegramClient(
+    APP4 = TelegramClient(
         session=session4,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -356,14 +347,14 @@ if STRING_4:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py4 = PyTgCalls(MAN4)
+    call_py4 = PyTgCalls(APP4)
 else:
-    MAN4 = None
+    APP4 = None
 
 
 if STRING_5:
     session5 = StringSession(str(STRING_5))
-    MAN5 = TelegramClient(
+    APP5 = TelegramClient(
         session=session5,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -371,9 +362,9 @@ if STRING_5:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py5 = PyTgCalls(MAN5)
+    call_py5 = PyTgCalls(APP5)
 else:
-    MAN5 = None
+    APP5 = None
 
 
 async def check_botlog_chatid() -> None:
@@ -387,9 +378,9 @@ async def check_botlog_chatid() -> None:
 async def update_restart_msg(chat_id, msg_id):
     DEFAULTUSER = ALIVE_NAME or "Set `ALIVE_NAME` ConfigVar!"
     message = (
-        f"**Man-UserBot v{BOT_VER} is back up and running!**\n\n"
-        f"**Telethon:** {version.__version__}\n"
-        f"**Python:** {python_version()}\n"
+        f"**KEN-UBOT `v{BOT_VER}` is back up and running!**\n\n"
+        f"**Telethon:** `{version.__version__}`\n"
+        f"**Python:** `{python_version()}`\n"
         f"**User:** {DEFAULTUSER}"
     )
     await bot.edit_message(chat_id, msg_id, message)
@@ -485,7 +476,7 @@ with bot:
         uid = user.id
         owner = user.first_name
         logo = ALIVE_LOGO
-        logoman = INLINE_PIC
+        logox = INLINE_PIC
         tgbotusername = BOT_USERNAME
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
@@ -565,23 +556,23 @@ with bot:
             if event.query.user_id == uid and query.startswith("@SharingUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
-                    file=logoman,
+                    file=logox,
                     link_preview=False,
-                    text=f"**✗ Man-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**Bot Of** [{user.first_name}](tg://user?id={user.id})\n× **Modules** `{len(dugmeler)}`",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Man - Userbot",
+                    description="Repository KEN-UBOT",
                     url="https://t.me/SharingUserbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**Man - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Risman](https://t.me/mrismanaziz)\n✣ **Support :** @Lunatic0de\n✣ **Repository :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**KEN-UBOT:** [Kennedy](https://t.me/yourlilboy)\n× **Support :** @kennedyproject\n× **Repository :** [Github](https://github.com/kennedy-ex/KEN-UBOT)",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/SharingUserbot"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/emikosupport"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/mrismanaziz/Man-Userbot"
+                                "ʀᴇᴘᴏ", "https://github.com/kennedy-ex/KEN-UBOT"
                             ),
                         ],
                     ],
@@ -621,16 +612,16 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✗ Man-Userbot ✗",
-                    description="Man - UserBot | Telethon",
+                    title="× KEN-UBOT ×",
+                    description="UserBot | Telethon",
                     url="https://t.me/SharingUserbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**Man - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @Lunatic0de\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**KEN-UBOT**\n× **UserMode:** [{user.first_name}](tg://user?id={user.id})\n× **Assistant:** {tgbotusername}\n× **Support:** @kennedyproject",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/SharingUserbot"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/emikosupport"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/mrismanaziz/Man-Userbot"
+                                "ʀᴇᴘᴏ", "https://github.com/kennedy-ex/KEN-UBOT"
                             ),
                         ],
                     ],
@@ -645,10 +636,10 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, dugmeler, "helpme")
-                text = f"**✗ Man-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
+                text = f"**Bot Of** [{user.first_name}](tg://user?id={user.id})\n× **Modules** `{len(dugmeler)}`"
                 await event.edit(
                     text,
-                    file=logoman,
+                    file=logox,
                     buttons=buttons,
                     link_preview=False,
                 )
