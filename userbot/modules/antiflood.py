@@ -7,7 +7,7 @@ from telethon.tl.types import ChatBannedRights
 import userbot.modules.sql_helper.antiflood_sql as sql
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.events import man_cmd
+from userbot.events import ken_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils.tools import is_admin
 
@@ -62,7 +62,7 @@ async def _(event):
         )
 
 
-@bot.on(man_cmd(outgoing=True, pattern="setflood(?: |$)(.*)"))
+@bot.on(ken_cmd(outgoing=True, pattern="setflood(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
