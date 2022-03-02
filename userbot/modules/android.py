@@ -21,7 +21,7 @@ from userbot.utils import (
     chrome,
     human_to_bytes,
     humanbytes,
-    man_cmd,
+    ken_cmd,
     md5,
     time_formatter,
 )
@@ -33,7 +33,7 @@ DEVICES_DATA = (
 )
 
 
-@man_cmd(pattern="magisk$")
+@ken_cmd(pattern="magisk$")
 async def magisk(request):
     """magisk latest releases"""
     magisk_dict = {
@@ -57,7 +57,7 @@ async def magisk(request):
     await request.edit(releases)
 
 
-@man_cmd(pattern=r"device(?: |$)(\S*)")
+@ken_cmd(pattern=r"device(?: |$)(\S*)")
 async def device_info(request):
     """get android device basic info from its codename"""
     textx = await request.get_reply_message()
@@ -87,7 +87,7 @@ async def device_info(request):
     await request.edit(reply)
 
 
-@man_cmd(pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)")
+@ken_cmd(pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)")
 async def codename_info(request):
     """search for android codename"""
     textx = await request.get_reply_message()
@@ -124,7 +124,7 @@ async def codename_info(request):
     await request.edit(reply)
 
 
-@man_cmd(pattern="pixeldl(?: |$)(.*)")
+@ken_cmd(pattern="pixeldl(?: |$)(.*)")
 async def download_api(dl):
     await dl.edit("`Collecting information...`")
     URL = dl.pattern_match.group(1)
@@ -228,7 +228,7 @@ async def download_api(dl):
     return
 
 
-@man_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)")
+@ken_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)")
 async def devices_specifications(request):
     """Mobile devices specifications"""
     textx = await request.get_reply_message()
@@ -287,7 +287,7 @@ async def devices_specifications(request):
     await request.edit(reply)
 
 
-@man_cmd(pattern=r"twrp(?: |$)(\S*)")
+@ken_cmd(pattern=r"twrp(?: |$)(\S*)")
 async def twrp(request):
     """get android device twrp"""
     textx = await request.get_reply_message()
@@ -319,18 +319,18 @@ async def twrp(request):
 CMD_HELP.update(
     {
         "android": f"**Plugin : **`android`\
-        \n\n  •  **Syntax :** `{cmd}magisk`\
-        \n  •  **Function : **Dapatkan rilis Magisk terbaru \
-        \n\n  •  **Syntax :** `{cmd}device <codename>`\
-        \n  •  **Function : **Dapatkan info tentang nama kode atau model perangkat android. \
-        \n\n  •  **Syntax :** `{cmd}codename <brand> <device>`\
-        \n  •  **Function : **Cari nama kode perangkat android. \
-        \n\n  •  **Syntax :** `{cmd}pixeldl` **<download.pixelexperience.org>**\
-        \n  •  **Function : **Unduh ROM pengalaman piksel ke server bot pengguna Anda. \
-        \n\n  •  **Syntax :** `{cmd}specs <brand> <device>`\
-        \n  •  **Function : **Dapatkan info spesifikasi perangkat. \
-        \n\n  •  **Syntax :** `{cmd}twrp <codename>`\
-        \n  •  **Function : **Dapatkan unduhan twrp terbaru untuk perangkat android. \
+        \n\n  ×  **Example :** `{cmd}magisk`\
+        \n  ×  **Function : **Dapatkan rilis Magisk terbaru \
+        \n\n  ×  **Example :** `{cmd}device <codename>`\
+        \n  ×  **Function : **Dapatkan info tentang nama kode atau model perangkat android. \
+        \n\n  ×  **Example :** `{cmd}codename <brand> <device>`\
+        \n  ×  **Function : **Cari nama kode perangkat android. \
+        \n\n  ×  **Example :** `{cmd}pixeldl` **<download.pixelexperience.org>**\
+        \n  ×  **Function : **Unduh ROM pengalaman piksel ke server bot pengguna Anda. \
+        \n\n  ×  **Example :** `{cmd}specs <brand> <device>`\
+        \n  ×  **Function : **Dapatkan info spesifikasi perangkat. \
+        \n\n  ×  **Example :** `{cmd}twrp <codename>`\
+        \n  ×  **Function : **Dapatkan unduhan twrp terbaru untuk perangkat android. \
     "
     }
 )
