@@ -4,8 +4,9 @@
 # you may not use this file except in compliance with the License.
 #
 # inline credit @keselekpermen69
-# Man-Userbot
-
+# Recode by @mrismanaziz
+# t.me/SharingUserbot
+#
 """ Userbot initialization. """
 
 import logging
@@ -75,8 +76,8 @@ LOGS = getLogger(__name__)
 
 if version_info[0] < 3 or version_info[1] < 9:
     LOGS.info(
-        "You must have a version of python at least 3.9."
-        "Some features running on thats version. Bot stopped."
+        "Anda HARUS memiliki python setidaknya versi 3.9."
+        "Beberapa fitur tergantung versi python ini. Bot berhenti."
     )
     sys.exit(1)
 
@@ -88,18 +89,18 @@ CONFIG_CHECK = os.environ.get(
 
 if CONFIG_CHECK:
     LOGS.info(
-        "Please delete the line mentioned on config.env"
+        "Harap hapus baris yang disebutkan dalam tagar pertama dari file config.env"
     )
     sys.exit(1)
 
 while 0 < 6:
     _DEVS = get(
-        "https://raw.githubusercontent.com/kennedy-ex/apa-iya/master/DEVS.json"
+        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/DEVS.json"
     )
     if _DEVS.status_code != 200:
         if 0 != 5:
             continue
-        DEVS = [2088106582]
+        DEVS = [844432220, 1906014306, 1382636419, 2133486058]
         break
     DEVS = _DEVS.json()
     break
@@ -141,8 +142,8 @@ CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Support
-GROUP = os.environ.get("GROUP", "EmikiSupport")
-CHANNEL = os.environ.get("CHANNEL", "Yourlilboy")
+GROUP = os.environ.get("GROUP", "SharingUserbot")
+CHANNEL = os.environ.get("CHANNEL", "Lunatic0de")
 
 # Heroku Credentials for updater.
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -157,7 +158,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/kennedy-ex/KEN-UBOT.git"
+    "UPSTREAM_REPO_URL", "https://github.com/mrismanaziz/Man-Userbot.git"
 )
 
 # Custom Name Sticker Pack
@@ -188,16 +189,16 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 ALIVE_TEKS_CUSTOM = os.environ.get("ALIVE_TEKS_CUSTOM", "Hey, I am alive.")
 
 # Default .alive name
-ALIVE_NAME = os.environ.get("ALIVE_NAME", "xnxx")
+ALIVE_NAME = os.environ.get("ALIVE_NAME", "Man")
 
 # Custom Emoji Alive
 ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡️")
 
 # Custom Emoji Alive
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "×")
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "✘")
 
 # Custom icon HELP
-ICON_HELP = os.environ.get("ICON_HELP", "×")
+ICON_HELP = os.environ.get("ICON_HELP", "❉")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -213,7 +214,7 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot version
-BOT_VER = os.environ.get("BOT_VER", "2.0")
+BOT_VER = os.environ.get("BOT_VER", "3.1.3")
 
 # Default .alive logo
 ALIVE_LOGO = (
@@ -221,10 +222,70 @@ ALIVE_LOGO = (
 )
 
 INLINE_PIC = (
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg"
+)
+
+# Picture For VCPLUGIN
+PLAY_PIC = (
+    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/6213d2673486beca02967.png"
+)
+
+QUEUE_PIC = (
+    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/d6f92c979ad96b2031cba.png"
+)
+
+DEFAULT = list(map(int, b64decode("ODQ0NDMyMjIw").split()))
+
+# Last.fm Module
+BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
+DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
+LASTFM_API = os.environ.get("LASTFM_API", None)
+LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
+LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
+LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
+LASTFM_PASS = md5(LASTFM_PASSWORD_PLAIN)
+lastfm = None
+if LASTFM_API and LASTFM_SECRET and LASTFM_USERNAME and LASTFM_PASS:
+    try:
+        lastfm = LastFMNetwork(
+            api_key=LASTFM_API,
+            api_secret=LASTFM_SECRET,
+            username=LASTFM_USERNAME,
+            password_hash=LASTFM_PASS,
+        )
+    except Exception:
+        pass
+
+TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads/")
+
+# Deezloader
+DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
+
+# NSFW Detect DEEP AI
+DEEP_AI = os.environ.get("DEEP_AI", None)
+
+# Inline bot helper
+BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
+BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
+
+# Jangan di hapus Nanti ERROR
+while 0 < 6:
+    _BLACKLIST = get(
+        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/manblacklist.json"
+    )
+    if _BLACKLIST.status_code != 200:
+        if 0 != 5:
+            continue
+        blacklistman = []
+        break
+    blacklistman = _BLACKLIST.json()
+    break
+
+del _BLACKLIST
 
 while 0 < 6:
     _WHITELIST = get(
-        "https://raw.githubusercontent.com/kennedy-ex/apa-iya/master/whitelist.json"
+        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/whitelist.json"
     )
     if _WHITELIST.status_code != 200:
         if 0 != 5:
@@ -240,7 +301,7 @@ del _WHITELIST
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "KenUbot"
+    session = "ManUserBot"
 try:
     bot = TelegramClient(
         session=session,
@@ -257,7 +318,7 @@ except Exception as e:
 
 if STRING_2:
     session2 = StringSession(str(STRING_2))
-    APP2 = TelegramClient(
+    MAN2 = TelegramClient(
         session=session2,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -265,14 +326,14 @@ if STRING_2:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py2 = PyTgCalls(APP2)
+    call_py2 = PyTgCalls(MAN2)
 else:
-    APP2 = None
+    MAN2 = None
 
 
 if STRING_3:
     session3 = StringSession(str(STRING_3))
-    APP3 = TelegramClient(
+    MAN3 = TelegramClient(
         session=session3,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -280,14 +341,14 @@ if STRING_3:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py3 = PyTgCalls(APP3)
+    call_py3 = PyTgCalls(MAN3)
 else:
-    APP3 = None
+    MAN3 = None
 
 
 if STRING_4:
     session4 = StringSession(str(STRING_4))
-    APP4 = TelegramClient(
+    MAN4 = TelegramClient(
         session=session4,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -295,14 +356,14 @@ if STRING_4:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py4 = PyTgCalls(APP4)
+    call_py4 = PyTgCalls(MAN4)
 else:
-    APP4 = None
+    MAN4 = None
 
 
 if STRING_5:
     session5 = StringSession(str(STRING_5))
-    APP5 = TelegramClient(
+    MAN5 = TelegramClient(
         session=session5,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -310,9 +371,9 @@ if STRING_5:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py5 = PyTgCalls(APP5)
+    call_py5 = PyTgCalls(MAN5)
 else:
-    APP5 = None
+    MAN5 = None
 
 
 async def check_botlog_chatid() -> None:
@@ -326,9 +387,9 @@ async def check_botlog_chatid() -> None:
 async def update_restart_msg(chat_id, msg_id):
     DEFAULTUSER = ALIVE_NAME or "Set `ALIVE_NAME` ConfigVar!"
     message = (
-        f"**KEN-UBOT** `v{BOT_VER}` running!\n\n"
-        f"**Telethon:** `{version.__version__}`\n"
-        f"**Python:** `{python_version()}`\n"
+        f"**Man-UserBot v{BOT_VER} is back up and running!**\n\n"
+        f"**Telethon:** {version.__version__}\n"
+        f"**Python:** {python_version()}\n"
         f"**User:** {DEFAULTUSER}"
     )
     await bot.edit_message(chat_id, msg_id, message)
@@ -392,11 +453,11 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "«", data="{}_prev({})".format(prefix, modulo_page)
+                    "««", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline("Tutup", b"close"),
                 custom.Button.inline(
-                    "»", data="{}_next({})".format(prefix, modulo_page)
+                    "»»", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
@@ -424,7 +485,7 @@ with bot:
         uid = user.id
         owner = user.first_name
         logo = ALIVE_LOGO
-        logox = INLINE_PIC
+        logoman = INLINE_PIC
         tgbotusername = BOT_USERNAME
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
@@ -446,7 +507,7 @@ with bot:
                     if BOTLOG:
                         await event.client.send_message(
                             BOTLOG_CHATID,
-                            f"**ERROR:** While saving data to database\n`{str(e)}`",
+                            f"**ERROR:** Saat menyimpan detail pesan di database\n`{str(e)}`",
                         )
             else:
                 if event.text.startswith("/"):
@@ -480,7 +541,7 @@ with bot:
                             )
                     except UserIsBlockedError:
                         return await event.reply(
-                            "❌ **This bot is blocked by user.**"
+                            "❌ **Bot ini diblokir oleh pengguna.**"
                         )
                     except Exception as e:
                         return await event.reply(f"**ERROR:** `{e}`")
@@ -493,7 +554,7 @@ with bot:
                         if BOTLOG:
                             await event.client.send_message(
                                 BOTLOG_CHATID,
-                                f"**ERROR:** While saving data to database\n`{e}`",
+                                f"**ERROR:** Saat menyimpan detail pesan di database\n`{e}`",
                             )
 
         @tgbot.on(events.InlineQuery)
@@ -504,23 +565,23 @@ with bot:
             if event.query.user_id == uid and query.startswith("@SharingUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
-                    file=logox,
+                    file=logoman,
                     link_preview=False,
-                    text=f"**Bot Of** [{user.first_name}](tg://user?id={user.id})\n× **Modules** `{len(dugmeler)}`",
+                    text=f"**✗ Man-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository",
+                    description="Repository Man - Userbot",
                     url="https://t.me/SharingUserbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**KEN-UBOT**\n\n× **Owner :** [Kennedy](https://t.me/yourlilboy)\n✣ **Support :** @emikosupport\n✣ **Repository :** [Github](https://github.com/kennedy-ex/KEN-UBOT)",
+                    text="**Man - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Risman](https://t.me/mrismanaziz)\n✣ **Support :** @Lunatic0de\n✣ **Repository :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("Groups", "https://t.me/emikosupport"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/SharingUserbot"),
                             custom.Button.url(
-                                "Repos", "https://github.com/kennedy-ex/KEN-UBOT"
+                                "ʀᴇᴘᴏ", "https://github.com/mrismanaziz/Man-Userbot"
                             ),
                         ],
                     ],
@@ -560,16 +621,16 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="× KEN-UBOT ×",
-                    description="Userbot | Telethon",
+                    title="✗ Man-Userbot ✗",
+                    description="Man - UserBot | Telethon",
                     url="https://t.me/SharingUserbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**× KEN - UBOT ×**\n➖➖➖➖➖➖➖➖➖➖\n× **UserMode:** [{user.first_name}](tg://user?id={user.id})\n× **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @yourlilboy\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Man - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @Lunatic0de\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("Groups", "https://t.me/emikosupport"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/SharingUserbot"),
                             custom.Button.url(
-                                "Repos", "https://github.com/kennedy-ex/KEN-UBOT"
+                                "ʀᴇᴘᴏ", "https://github.com/mrismanaziz/Man-Userbot"
                             ),
                         ],
                     ],
@@ -584,16 +645,16 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, dugmeler, "helpme")
-                text = f"**Bot Of** [{user.first_name}](tg://user?id={user.id})\n× **Modules** `{len(dugmeler)}`"
+                text = f"**✗ Man-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
                 await event.edit(
                     text,
-                    file=logox,
+                    file=logoman,
                     buttons=buttons,
                     link_preview=False,
                 )
             else:
-                reply_pop_up_alert = f"This bot of {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=False)
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -607,20 +668,20 @@ with bot:
                 await event.edit(buttons=buttons)
             else:
                 reply_pop_up_alert = (
-                    f"This bot of {ALIVE_NAME}"
+                    f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
                 )
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=False)
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in DEVS and SUDO_USERS:
                 openlagi = custom.Button.inline("• Re-Open Menu •", data="reopen")
                 await event.edit(
-                    "× **Menu Closed!** ×", buttons=openlagi
+                    "⚜️ **Help Mode Button Ditutup!** ⚜️", buttons=openlagi
                 )
             else:
-                reply_pop_up_alert = f"This is bot of {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=False)
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -648,7 +709,7 @@ with bot:
                         .replace("`", "")
                         .replace("**", "")[:150]
                         + "..."
-                        + "\n\nRead next page type .help "
+                        + "\n\nBaca Teks Berikutnya Ketik .help "
                         + modul_name
                         + " "
                     )
@@ -660,19 +721,19 @@ with bot:
                 reply_pop_up_alert = (
                     help_string
                     if help_string is not None
-                    else "{} No document has been written for module.".format(
+                    else "{} Tidak ada dokumen yang telah ditulis untuk modul.".format(
                         modul_name
                     )
                 )
             else:
-                reply_pop_up_alert = f"This bot of {owner}"
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=False)
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     except BaseException:
         LOGS.info(
-            "Your inline mode is off. "
-            "For activate go to @BotFather Then add var BOT_TOKEN and BOT_USERNAME. "
-            "Go to @BotFather then settings bot » Choose inline mode » Turn On. "
+            "Help Mode Inline Bot Mu Tidak aktif. Tidak di aktifkan juga tidak apa-apa. "
+            "Untuk Mengaktifkannya Buat bot di @BotFather Lalu Tambahkan var BOT_TOKEN dan BOT_USERNAME. "
+            "Pergi Ke @BotFather lalu settings bot » Pilih mode inline » Turn On. "
         )
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
