@@ -3,9 +3,6 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-# Recode by @mrismanaziz
-# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-# t.me/SharingUserbot & t.me/Lunatic0de
 
 from asyncio import sleep
 
@@ -42,8 +39,8 @@ from userbot.utils import (
     edit_delete,
     edit_or_reply,
     get_user_from_event,
-    man_cmd,
-    man_handler,
+    ken_cmd,
+    ken_handler,
     media_type,
 )
 from userbot.utils.logger import logging
@@ -86,7 +83,7 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@man_cmd(pattern="setgpic( -s| -d)$")
+@ken_cmd(pattern="setgpic( -s| -d)$")
 @register(pattern=r"^\.csetgpic( -s| -d)$", sudo=True)
 async def set_group_photo(event):
     "For changing Group dp"
@@ -123,7 +120,7 @@ async def set_group_photo(event):
         await edit_delete(event, "**Foto Profil Grup Berhasil dihapus.**", 30)
 
 
-@man_cmd(pattern="promote(?:\s|$)([\s\S]*)")
+@ken_cmd(pattern="promote(?:\s|$)([\s\S]*)")
 @register(pattern=r"^\.cpromote(?:\s|$)([\s\S]*)", sudo=True)
 async def promote(event):
     new_rights = ChatAdminRights(
@@ -140,22 +137,22 @@ async def promote(event):
         rank = "admin"
     if not user:
         return
-    eventman = await edit_or_reply(event, "`Promoting...`")
+    eventken = await edit_or_reply(event, "`Promoting...`")
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
-        return await eventman.edit(NO_PERM)
-    await edit_delete(eventman, "`Promoted Successfully!`", 30)
+        return await eventken.edit(NO_PERM)
+    await edit_delete(eventken, "`Promoted Successfully!`", 30)
 
 
-@man_cmd(pattern="demote(?:\s|$)([\s\S]*)")
+@ken_cmd(pattern="demote(?:\s|$)([\s\S]*)")
 @register(pattern=r"^\.cdemote(?:\s|$)([\s\S]*)", sudo=True)
 async def demote(event):
     "To demote a person in group"
     user, _ = await get_user_from_event(event)
     if not user:
         return
-    eventman = await edit_or_reply(event, "`Demoting...`")
+    eventken = await edit_or_reply(event, "`Demoting...`")
     newrights = ChatAdminRights(
         add_admins=None,
         invite_users=None,
@@ -169,11 +166,11 @@ async def demote(event):
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, newrights, rank))
     except BadRequestError:
-        return await eventman.edit(NO_PERM)
-    await edit_delete(eventman, "`Demoted Successfully!`", 30)
+        return await eventken.edit(NO_PERM)
+    await edit_delete(eventken, "`Demoted Successfully!`", 30)
 
 
-@man_cmd(pattern="ban(?:\s|$)([\s\S]*)")
+@ken_cmd(pattern="ban(?:\s|$)([\s\S]*)")
 @register(pattern=r"^\.cban(?:\s|$)([\s\S]*)", sudo=True)
 async def ban(bon):
     me = await bon.client.get_me()
@@ -186,25 +183,25 @@ async def ban(bon):
     user, reason = await get_user_from_event(bon)
     if not user:
         return
-    man = await edit_or_reply(bon, "`Processing Banned...`")
+    ken = await edit_or_reply(bon, "`Processing Banned...`")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
         return await edit_or_reply(bon, NO_PERM)
     if reason:
-        await man.edit(
+        await ken.edit(
             r"\\**#Banned_User**//"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{str(user.id)}`\n"
             f"**Reason:** `{reason}`",
         )
     else:
-        await man.edit(
+        await ken.edit(
             f"\\\\**#Banned_User**//\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n**User ID:** `{user.id}`\n**Action:** `Banned User by {me.first_name}`",
         )
 
 
-@man_cmd(pattern="unban(?:\s|$)([\s\S]*)")
+@ken_cmd(pattern="unban(?:\s|$)([\s\S]*)")
 @register(pattern=r"^\.cunban(?:\s|$)([\s\S]*)", sudo=True)
 async def nothanos(unbon):
     chat = await unbon.get_chat()
@@ -212,19 +209,19 @@ async def nothanos(unbon):
     creator = chat.creator
     if not admin and not creator:
         return await edit_delete(unbon, NO_ADMIN)
-    man = await edit_or_reply(unbon, "`Processing...`")
+    ken = await edit_or_reply(unbon, "`Processing...`")
     user = await get_user_from_event(unbon)
     user = user[0]
     if not user:
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await edit_delete(man, "`Unban Berhasil Dilakukan!`")
+        await edit_delete(ken, "`Unban Berhasil Dilakukan!`")
     except UserIdInvalidError:
-        await edit_delete(man, "`Sepertinya Terjadi ERROR!`")
+        await edit_delete(ken, "`Sepertinya Terjadi ERROR!`")
 
 
-@man_cmd(pattern="mute(?: |$)(.*)")
+@ken_cmd(pattern="mute(?: |$)(.*)")
 @register(pattern=r"^\.cmute(?: |$)(.*)", sudo=True)
 async def spider(spdr):
     try:
@@ -236,46 +233,46 @@ async def spider(spdr):
     creator = chat.creator
     if not admin and not creator:
         return await edit_or_reply(spdr, NO_ADMIN)
-    man = await edit_or_reply(spdr, "`Processing...`")
+    ken = await edit_or_reply(spdr, "`Processing...`")
     user, reason = await get_user_from_event(spdr)
     if not user:
         return
     self_user = await spdr.client.get_me()
     if user.id == self_user.id:
-        return await edit_or_reply(man, "**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**")
+        return await edit_or_reply(ken, "**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**")
     if user.id in DEVS:
-        return await man.edit("**Gagal Mute, dia adalah Pembuat Saya 🤪**")
+        return await ken.edit("**Gagal Mute, dia adalah Pembuat Saya 🤪**")
     if user.id in WHITELIST:
-        return await man.edit("**Gagal Mute, dia adalah admin @SharingUserbot 🤪**")
-    await man.edit(
+        return await ken.edit("**Gagal Mute, dia adalah admin @SharingUserbot 🤪**")
+    await ken.edit(
         r"\\**#Muted_User**//"
         f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
         f"**User ID:** `{user.id}`\n"
         f"**Action:** `Mute by {self_user.first_name}`",
     )
     if mute(spdr.chat_id, user.id) is False:
-        return await edit_delete(man, "**ERROR:** `Pengguna Sudah Dibisukan.`")
+        return await edit_delete(ken, "**ERROR:** `Pengguna Sudah Dibisukan.`")
     try:
         await spdr.client(EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
         if reason:
-            await man.edit(
+            await ken.edit(
                 r"\\**#Muted_User**//"
                 f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**User ID:** `{user.id}`\n"
                 f"**Reason:** `{reason}`",
             )
         else:
-            await man.edit(
+            await ken.edit(
                 r"\\**#Muted_User**//"
                 f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**User ID:** `{user.id}`\n"
                 f"**Action:** `Mute by {self_user.first_name}`",
             )
     except UserIdInvalidError:
-        return await edit_delete(man, "**Terjadi ERROR!**")
+        return await edit_delete(ken, "**Terjadi ERROR!**")
 
 
-@man_cmd(pattern="unmute(?: |$)(.*)")
+@ken_cmd(pattern="unmute(?: |$)(.*)")
 @register(pattern=r"^\.cunmute(?: |$)(.*)", sudo=True)
 async def unmoot(unmot):
     chat = await unmot.get_chat()
@@ -287,7 +284,7 @@ async def unmoot(unmot):
         from userbot.modules.sql_helper.spam_mute_sql import unmute
     except AttributeError:
         return await unmot.edit(NO_SQL)
-    man = await edit_or_reply(unmot, "`Processing...`")
+    ken = await edit_or_reply(unmot, "`Processing...`")
     user = await get_user_from_event(unmot)
     user = user[0]
     if not user:
@@ -297,12 +294,12 @@ async def unmoot(unmot):
         return await edit_delete(unmot, "**ERROR! Pengguna Sudah Tidak Dibisukan.**")
     try:
         await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
-        await edit_delete(man, "**Berhasil Melakukan Unmute!**")
+        await edit_delete(ken, "**Berhasil Melakukan Unmute!**")
     except UserIdInvalidError:
-        return await edit_delete(man, "**Terjadi ERROR!**")
+        return await edit_delete(ken, "**Terjadi ERROR!**")
 
 
-@man_handler()
+@ken_handler()
 async def muter(moot):
     try:
         from userbot.modules.sql_helper.gmute_sql import is_gmuted
@@ -333,7 +330,7 @@ async def muter(moot):
             await moot.delete()
 
 
-@man_cmd(pattern="ungmute(?: |$)(.*)")
+@ken_cmd(pattern="ungmute(?: |$)(.*)")
 @register(pattern=r"^\.cungmute(?: |$)(.*)", sudo=True)
 async def ungmoot(un_gmute):
     chat = await un_gmute.get_chat()
@@ -345,19 +342,19 @@ async def ungmoot(un_gmute):
         from userbot.modules.sql_helper.gmute_sql import ungmute
     except AttributeError:
         return await edit_delete(un_gmute, NO_SQL)
-    man = await edit_or_reply(un_gmute, "`Processing...`")
+    ken = await edit_or_reply(un_gmute, "`Processing...`")
     user = await get_user_from_event(un_gmute)
     user = user[0]
     if not user:
         return
-    await man.edit("`Membuka Global Mute Pengguna...`")
+    await ken.edit("`Membuka Global Mute Pengguna...`")
     if ungmute(user.id) is False:
-        await man.edit("**ERROR!** Pengguna Sedang Tidak Di Gmute.")
+        await ken.edit("**ERROR!** Pengguna Sedang Tidak Di Gmute.")
     else:
         await edit_delete(un_gmute, "**Berhasil! Pengguna Sudah Tidak Dibisukan**")
 
 
-@man_cmd(pattern="gmute(?: |$)(.*)")
+@ken_cmd(pattern="gmute(?: |$)(.*)")
 @register(pattern=r"^\.cgmute(?: |$)(.*)", sudo=True)
 async def gspider(gspdr):
     chat = await gspdr.get_chat()
@@ -369,29 +366,29 @@ async def gspider(gspdr):
         from userbot.modules.sql_helper.gmute_sql import gmute
     except AttributeError:
         return await gspdr.edit(NO_SQL)
-    man = await edit_or_reply(gspdr, "`Processing...`")
+    ken = await edit_or_reply(gspdr, "`Processing...`")
     user, reason = await get_user_from_event(gspdr)
     if not user:
         return
     self_user = await gspdr.client.get_me()
     if user.id == self_user.id:
-        return await man.edit("**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**")
+        return await ken.edit("**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**")
     if user.id in DEVS:
-        return await man.edit("**Gagal Global Mute, Dia Adalah Pembuat Saya 🤪**")
+        return await ken.edit("**Gagal Global Mute, Dia Adalah Pembuat Saya 🤪**")
     if user.id in WHITELIST:
-        return await man.edit("**Gagal Mute, dia adalah admin @SharingUserbot 🤪**")
-    await man.edit("**Berhasil Membisukan Pengguna!**")
+        return await ken.edit("**Gagal Mute, dia adalah admin @SharingUserbot 🤪**")
+    await ken.edit("**Berhasil Membisukan Pengguna!**")
     if gmute(user.id) is False:
         await edit_delete(gspdr, "**ERROR! Pengguna Sudah Dibisukan.**")
     elif reason:
-        await man.edit(
+        await ken.edit(
             r"\\**#GMuted_User**//"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{user.id}`\n"
             f"**Reason:** `{reason}`",
         )
     else:
-        await man.edit(
+        await ken.edit(
             r"\\**#GMuted_User**//"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{user.id}`\n"
@@ -399,7 +396,7 @@ async def gspider(gspdr):
         )
 
 
-@man_cmd(pattern="zombies(?: |$)(.*)")
+@ken_cmd(pattern="zombies(?: |$)(.*)")
 async def rm_deletedacc(show):
     con = show.pattern_match.group(1).lower()
     del_u = 0
@@ -456,7 +453,7 @@ async def rm_deletedacc(show):
         )
 
 
-@man_cmd(pattern="admins$")
+@ken_cmd(pattern="admins$")
 async def get_admin(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title or "Grup Ini"
@@ -475,7 +472,7 @@ async def get_admin(show):
     await show.edit(mentions, parse_mode="html")
 
 
-@man_cmd(pattern="pin( loud|$)")
+@ken_cmd(pattern="pin( loud|$)")
 @register(pattern=r"^\.cpin( loud|$)", sudo=True)
 async def pin(event):
     to_pin = event.reply_to_msg_id
@@ -492,7 +489,7 @@ async def pin(event):
     await edit_delete(event, "`Pinned Successfully!`")
 
 
-@man_cmd(pattern="unpin( all|$)")
+@ken_cmd(pattern="unpin( all|$)")
 @register(pattern=r"^\.cunpin( all|$)", sudo=True)
 async def pin(event):
     to_unpin = event.reply_to_msg_id
@@ -521,7 +518,7 @@ async def pin(event):
     await edit_delete(event, "`Unpinned Successfully!`")
 
 
-@man_cmd(pattern="kick(?: |$)(.*)")
+@ken_cmd(pattern="kick(?: |$)(.*)")
 @register(pattern=r"^\.ckick(?: |$)(.*)", sudo=True)
 async def kick(usr):
     chat = await usr.get_chat()
@@ -548,7 +545,7 @@ async def kick(usr):
         )
 
 
-@man_cmd(pattern=r"undlt( -u)?(?: |$)(\d*)?")
+@ken_cmd(pattern=r"undlt( -u)?(?: |$)(\d*)?")
 async def _iundlt(event):
     catevent = await edit_or_reply(event, "`Searching recent actions...`")
     flag = event.pattern_match.group(1)
