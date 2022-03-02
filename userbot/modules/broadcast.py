@@ -9,10 +9,10 @@ from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, LOGS
 from userbot.modules.sql_helper import broadcast_sql as sql
-from userbot.utils import man_cmd, parse_pre
+from userbot.utils import ken_cmd, parse_pre
 
 
-@man_cmd(pattern=r"sendto ?(.*)")
+@ken_cmd(pattern=r"sendto ?(.*)")
 async def catbroadcast_send(event):
     if event.fwd_from:
         return
@@ -58,7 +58,7 @@ async def catbroadcast_send(event):
         )
 
 
-@man_cmd(pattern=r"fwdto ?(.*)")
+@ken_cmd(pattern=r"fwdto ?(.*)")
 async def catbroadcast_send(event):
     if event.fwd_from:
         return
@@ -104,7 +104,7 @@ async def catbroadcast_send(event):
         )
 
 
-@man_cmd(pattern=r"addto ?(.*)")
+@ken_cmd(pattern=r"addto ?(.*)")
 async def catbroadcast_add(event):
     if event.fwd_from:
         return
@@ -140,7 +140,7 @@ async def catbroadcast_add(event):
             )
 
 
-@man_cmd(pattern=r"rmfrom ?(.*)")
+@ken_cmd(pattern=r"rmfrom ?(.*)")
 async def catbroadcast_remove(event):
     if event.fwd_from:
         return
@@ -176,7 +176,7 @@ async def catbroadcast_remove(event):
             )
 
 
-@man_cmd(pattern=r"bclist ?(.*)")
+@ken_cmd(pattern=r"bclist ?(.*)")
 async def catbroadcast_list(event):
     if event.fwd_from:
         return
@@ -216,7 +216,7 @@ async def catbroadcast_list(event):
     await catevent.edit(finaloutput)
 
 
-@man_cmd(pattern=r"bclistall ?(.*)")
+@ken_cmd(pattern=r"bclistall ?(.*)")
 async def catbroadcast_list(event):
     if event.fwd_from:
         return
@@ -232,7 +232,7 @@ async def catbroadcast_list(event):
     await event.efit(resultext)
 
 
-@man_cmd(pattern=r"frmfrom ?(.*)")
+@ken_cmd(pattern=r"frmfrom ?(.*)")
 async def catbroadcast_remove(event):
     if event.fwd_from:
         return
@@ -289,7 +289,7 @@ async def catbroadcast_remove(event):
             )
 
 
-@man_cmd(pattern=r"delc ?(.*)")
+@ken_cmd(pattern=r"delc ?(.*)")
 async def catbroadcast_delete(event):
     if event.fwd_from:
         return
