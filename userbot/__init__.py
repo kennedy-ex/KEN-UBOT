@@ -85,9 +85,7 @@ if CONFIG_CHECK:
     sys.exit(1)
 
 while 0 < 6:
-    _DEVS = get(
-        "https://raw.githubusercontent.com/kennedy-ex/apa-iya/master/DEVS.json"
-    )
+    _DEVS = get("https://raw.githubusercontent.com/kennedy-ex/apa-iya/master/DEVS.json")
     if _DEVS.status_code != 200:
         if 0 != 5:
             continue

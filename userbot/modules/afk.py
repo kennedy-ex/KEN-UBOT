@@ -95,9 +95,7 @@ async def on_afk(event):
                 + f"**× Karena :** `{reason}`"
             )
         else:
-            message_to_reply = (
-                f"**Sorry {owner} is AFK** `{total_afk_time}` ago."
-            )
+            message_to_reply = f"**Sorry {owner} is AFK** `{total_afk_time}` ago."
         try:
             if pic.endswith((".tgs", ".webp")):
                 msg = await event.reply(file=pic)
@@ -174,9 +172,7 @@ async def _(event):
             try:
                 if pic.endswith((".tgs", ".webp")):
                     await event.client.send_message(event.chat_id, file=pic)
-                    await event.client.send_message(
-                        event.chat_id, f"**{owner} AFK.**"
-                    )
+                    await event.client.send_message(event.chat_id, f"**{owner} AFK.**")
                 else:
                     await event.client.send_message(
                         event.chat_id,
@@ -184,9 +180,7 @@ async def _(event):
                         file=pic,
                     )
             except BaseException:
-                await event.client.send_message(
-                    event.chat_id, f"**{owner} AFK.**"
-                )
+                await event.client.send_message(event.chat_id, f"**{owner} AFK.**")
         await event.delete()
         try:
             if reason and pic:
@@ -220,9 +214,7 @@ async def _(event):
                         file=pic,
                     )
             else:
-                await event.client.send_message(
-                    BOTLOG_CHATID, f"\n**{owner} AFK.**"
-                )
+                await event.client.send_message(BOTLOG_CHATID, f"\n**{owner} AFK.**")
         except Exception as e:
             BOTLOG_CHATIDger.warn(str(e))
 
