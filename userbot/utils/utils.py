@@ -1,11 +1,4 @@
-Man-Userbot/userbot/utils/utils.py
-@mrismanaziz
-mrismanaziz autobot: fix auto add bot to BOTLOG_CHATID
- 1 contributor
-232 lines (217 sloc)  8.36 KB
-# Credits: @mrismanaziz
-# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-# t.me/SharingUserbot & t.me/Lunatic0de
+# Credits by @mrismanaziz || github.com/mrizmanaziz/Man-Userbot
 
 import asyncio
 import importlib
