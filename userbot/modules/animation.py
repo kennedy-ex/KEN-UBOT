@@ -8,10 +8,10 @@ from userbot import CMD_HELP
 from userbot import DEFAULT as me
 from userbot.events import register as own_cmd
 from userbot.modules.ping import absen
-from userbot.utils import edit_or_reply, man_cmd
+from userbot.utils import edit_or_reply, ken_cmd
 
 
-@man_cmd(pattern="bulan$")
+@ken_cmd(pattern="bulan$")
 async def _(event):
     event = await edit_or_reply(event, "bulan.")
     animation_interval = 0.2
@@ -56,7 +56,7 @@ async def _(event):
         await event.edit(animation_chars[i % 32])
 
 
-@man_cmd(pattern="sayang$")
+@ken_cmd(pattern="sayang$")
 async def _(event):
     e = await edit_or_reply(event, "I LOVEE YOUUU 💕")
     await e.edit("💝💘💓💗")
@@ -84,7 +84,7 @@ async def _(event):
     await e.edit("SAYANG KAMU💞")
 
 
-@man_cmd(pattern="dino(?: |$)(.*)")
+@ken_cmd(pattern="dino(?: |$)(.*)")
 async def _(event):
     typew = await edit_or_reply(event, "`DIN DINNN.....`")
     sleep(1)
@@ -141,7 +141,7 @@ async def _(event):
     await typew.edit("`-TAMAT-`")
 
 
-@man_cmd(pattern="gabut$")
+@ken_cmd(pattern="gabut$")
 async def _(event):
     e = await edit_or_reply(event, "`PERNAAHHHHH KAHHH KAUUU MENGIRA`")
     await e.edit("`SEPEEERTIIIII APAAAA BENTUKKKKKKK CINTAAAA`")
@@ -397,7 +397,7 @@ async def _(event):
     await e.edit("`GABUT`")
 
 
-@man_cmd(pattern=r"terkadang(?: |$)(.*)")
+@ken_cmd(pattern=r"terkadang(?: |$)(.*)")
 async def _(event):
     typew = await edit_or_reply(event, "`Terkadang`")
     sleep(1)
@@ -415,12 +415,12 @@ async def _(event):
 # Create by myself @localheart
 
 
-@man_cmd(pattern=r"mf$")
+@ken_cmd(pattern=r"mf$")
 async def _(event):
     await edit_or_reply(event, "`mf g dl` **ミ(ノ;_ _)ノ=3** ")
 
 
-@man_cmd(pattern=r"(.*)")
+@ken_cmd(pattern=r"(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -447,7 +447,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@man_cmd(pattern=r"gombal(?: |$)(.*)")
+@ken_cmd(pattern=r"gombal(?: |$)(.*)")
 async def _(event):
     typew = await edit_or_reply(event, "`Hai, I LOVE YOU 💞`")
     sleep(1)
@@ -473,7 +473,7 @@ async def _(event):
 # Create by myself @localheart
 
 
-@man_cmd(pattern="helikopter(?: |$)(.*)")
+@ken_cmd(pattern="helikopter(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -496,7 +496,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="tembak(?: |$)(.*)")
+@ken_cmd(pattern="tembak(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -504,7 +504,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="bundir(?: |$)(.*)")
+@ken_cmd(pattern="bundir(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -525,7 +525,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="awk(?: |$)(.*)")
+@ken_cmd(pattern="awk(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -537,7 +537,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="ular(?: |$)(.*)")
+@ken_cmd(pattern="ular(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -629,7 +629,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="y(?: |$)(.*)")
+@ken_cmd(pattern="y(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -649,7 +649,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="tank(?: |$)(.*)")
+@ken_cmd(pattern="tank(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -660,7 +660,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="babi(?: |$)(.*)")
+@ken_cmd(pattern="babi(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -680,7 +680,7 @@ async def _(event):
     await event.reply(choice(absen))
 
 
-@man_cmd(pattern="ajg(?: |$)(.*)")
+@ken_cmd(pattern="ajg(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -693,7 +693,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="bernyanyi(?: |$)(.*)")
+@ken_cmd(pattern="bernyanyi(?: |$)(.*)")
 async def _(event):
     typew = await edit_or_reply(event, "**Ganteng Doang Gak Bernyanyi (ง˙o˙)ว**")
     sleep(2)
@@ -728,7 +728,7 @@ async def _(event):
     await typew.edit("**♪┗ ( ･o･) ┓♪┏ (・o･) ┛♪**")
 
 
-@man_cmd(pattern=r"hua$")
+@ken_cmd(pattern=r"hua$")
 async def _(event):
     e = await edit_or_reply(event, "أ‿أ")
     await e.edit("╥﹏╥")
@@ -762,7 +762,7 @@ async def _(event):
     await e.edit("༼ ༎ຶ ෴ ༎ຶ༽")
 
 
-@man_cmd(pattern="huh(?: |$)(.*)")
+@ken_cmd(pattern="huh(?: |$)(.*)")
 async def _(event):
     e = await edit_or_reply(event, "`\n(\\_/)`" "`\n(●_●)`" "`\n />❤️ *Ini Buat Kamu`")
     sleep(3)
@@ -771,7 +771,7 @@ async def _(event):
     await e.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n💔<\\  *Terimakasih`")
 
 
-@man_cmd(pattern="(.*)")
+@ken_cmd(pattern="(.*)")
 async def _(event):
     input_str = event.pattern_match.group(1)
     if input_str == "ceritacinta":
@@ -805,7 +805,7 @@ async def _(event):
     await event.client.delete_messages(me, msg, revoke=False)
 
 
-@man_cmd(pattern="(.*)")
+@ken_cmd(pattern="(.*)")
 async def _(event):
     input_str = event.pattern_match.group(1)
     if input_str == "canda":
@@ -825,7 +825,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@man_cmd(pattern="santet(?: |$)(.*)")
+@ken_cmd(pattern="santet(?: |$)(.*)")
 async def _(event):
     typew = await edit_or_reply(event, "`Mengaktifkan Perintah Santet Online....`")
     sleep(2)
@@ -1137,7 +1137,7 @@ async def _(event):
     await typew.edit("**Target Berhasil Tersantet Online 🥴**")
 
 
-@man_cmd(pattern="nah(?: |$)(.*)")
+@ken_cmd(pattern="nah(?: |$)(.*)")
 async def _(event):
     typew = await edit_or_reply(
         event, "`\n(\\_/)`" "`\n(●_●)`" "`\n />💖 *Ini Buat Kamu`"
@@ -1149,7 +1149,7 @@ async def _(event):
 # Alpinnnn Gans
 
 
-@man_cmd(pattern="(.*)")
+@ken_cmd(pattern="(.*)")
 async def _(event):
     input_str = event.pattern_match.group(1)
     if input_str == "owner":
