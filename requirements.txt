@@ -18,7 +18,7 @@ fontTools
 geopy
 git+https://github.com/1danish-00/carbon-now-sh-api-wrapper.git
 git+https://github.com/buddhhu/img2html.git
-git+https://github.com/yt-dlp/yt-dlp@master
+yt-dlp
 gitpython
 glitch_this
 google_images_download
