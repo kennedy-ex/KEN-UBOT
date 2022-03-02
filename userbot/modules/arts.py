@@ -5,10 +5,10 @@ from time import sleep
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_or_reply, man_cmd
+from userbot.utils import edit_or_reply, ken_cmd
 
 
-@man_cmd(pattern="sadboy(?: |$)(.*)")
+@ken_cmd(pattern="sadboy(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event, "`Pertama-tama kamu cantik`")
     sleep(2)
@@ -17,7 +17,7 @@ async def _(event):
     await xx.edit("`Dan yang terakhir adalah kamu bukan jodohku`")
 
 
-@man_cmd(pattern="punten(?: |$)(.*)")
+@ken_cmd(pattern="punten(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -32,7 +32,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="pantau(?: |$)(.*)")
+@ken_cmd(pattern="pantau(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -47,7 +47,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="frog(?: |$)(.*)")
+@ken_cmd(pattern="frog(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -69,7 +69,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="dfrog(?: |$)(.*)")
+@ken_cmd(pattern="dfrog(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -91,7 +91,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="strump(?: |$)(.*)")
+@ken_cmd(pattern="strump(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -113,7 +113,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="scina(?: |$)(.*)")
+@ken_cmd(pattern="scina(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -136,7 +136,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="wlcm(?: |$)(.*)")
+@ken_cmd(pattern="wlcm(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -153,7 +153,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="gta(?: |$)(.*)")
+@ken_cmd(pattern="gta(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -171,7 +171,7 @@ async def _(event):
     )
 
 
-@man_cmd(pattern="sthink(?: |$)(.*)")
+@ken_cmd(pattern="sthink(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(
         event,
@@ -196,24 +196,24 @@ async def _(event):
 CMD_HELP.update(
     {
         "arts": f"**Plugin : **`arts`\
-        \n\n  •  **Syntax :** `{cmd}frog`\
-        \n  •  **Function : **arts Forg.\
-        \n\n  •  **Syntax :** `{cmd}dfrog`\
-        \n  •  **Function : **arts forg bundir.\
-        \n\n  •  **Syntax :** `{cmd}strump`\
-        \n  •  **Function : **arts donald Trump.\
-        \n\n  •  **Syntax :** `{cmd}scina`\
-        \n  •  **Function : **arts presiden cina.\
-        \n\n  •  **Syntax :** `{cmd}wlcm`\
-        \n  •  **Function : **arts beruang welcome.\
-        \n\n  •  **Syntax :** `{cmd}gta`\
-        \n  •  **Function : **arts si jhonson.\
-        \n\n  •  **Syntax :** `{cmd}sthink`\
-        \n  •  **Function : **arts berfikir\
-        \n\n  •  **Syntax :** `{cmd}punten` ; `{cmd}pantau`\
-        \n  •  **Function : **Arts Beruang kek lagi mantau.\
-        \n\n  •  **Syntax :** `{cmd}sadboy`\
-        \n  •  **Function : **ya sadboy coba aja.\
+        \n\n  ×  **Example :** `{cmd}frog`\
+        \n  ×  **Function : **arts Forg.\
+        \n\n  ×  **Example :** `{cmd}dfrog`\
+        \n  ×  **Function : **arts forg bundir.\
+        \n\n  ×  **Example :** `{cmd}strump`\
+        \n  ×  **Function : **arts donald Trump.\
+        \n\n  ×  **Example :** `{cmd}scina`\
+        \n  ×  **Function : **arts presiden cina.\
+        \n\n  ×  **Example :** `{cmd}wlcm`\
+        \n  ×  **Function : **arts beruang welcome.\
+        \n\n  ×  **Example :** `{cmd}gta`\
+        \n  ×  **Function : **arts si jhonson.\
+        \n\n  ×  **Example :** `{cmd}sthink`\
+        \n  ×  **Function : **arts berfikir\
+        \n\n  ×  **Example :** `{cmd}punten` ; `{cmd}pantau`\
+        \n  ×  **Function : **Arts Beruang kek lagi mantau.\
+        \n\n  ×  **Example :** `{cmd}sadboy`\
+        \n  ×  **Function : **ya sadboy coba aja.\
     "
     }
 )
