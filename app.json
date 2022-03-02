@@ -3,7 +3,7 @@
   "description": "[KEN-UBOT] userbot Telegram modular yang berjalan pada Python 3.9+",
   "logo": "https://telegra.ph/file/9cf8933ad10f520fc72e2.jpg",
   "keywords": ["telegram", "userbot", "ken-ubot", "modular", "python"],
-  "repository": "https://github.com/kennedy-ex/KEN-UBOT",
+  "repository": "https://github.com/kennedy-ex/KEN-UBOT/tree/beta",
   "stack": "container",
   "env": {
     "API_KEY": {
