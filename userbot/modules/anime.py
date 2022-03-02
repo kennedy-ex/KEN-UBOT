@@ -27,7 +27,7 @@ from telethon.utils import is_image, is_video
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_delete, edit_or_reply, man_cmd
+from userbot.utils import edit_delete, edit_or_reply, ken_cmd
 
 jikan = Jikan()
 
@@ -235,7 +235,7 @@ async def formatJSON(outData):
     return msg
 
 
-@man_cmd(pattern="anilist ?(.*)")
+@ken_cmd(pattern="anilist ?(.*)")
 async def anilist(event):
     if event.fwd_from:
         return
@@ -245,7 +245,7 @@ async def anilist(event):
     await edit_or_reply(event, msg, link_preview=True)
 
 
-@man_cmd(pattern="anime ?(.*)")
+@ken_cmd(pattern="anime ?(.*)")
 async def search_anime(message):
     search_query = message.pattern_match.group(1)
     await message.get_reply_message()
@@ -266,7 +266,7 @@ async def search_anime(message):
         )
 
 
-@man_cmd(pattern=r"manga ?(.*)")
+@ken_cmd(pattern=r"manga ?(.*)")
 async def search_manga(message):
     search_query = message.pattern_match.group(1)
     await message.get_reply_message()
@@ -281,7 +281,7 @@ async def search_manga(message):
     )
 
 
-@man_cmd(pattern="a(kaizoku|kayo) ?(.*)")
+@ken_cmd(pattern="a(kaizoku|kayo) ?(.*)")
 async def site_search(event):
     message = await event.get_reply_message()
     search_query = event.pattern_match.group(2)
@@ -328,7 +328,7 @@ async def site_search(event):
             await edit_or_reply(event, result, parse_mode="HTML")
 
 
-@man_cmd(pattern="char ?(.*)")
+@ken_cmd(pattern="char ?(.*)")
 async def character(event):
     message = await event.get_reply_message()
     search_query = event.pattern_match.group(1)
@@ -375,7 +375,7 @@ async def character(event):
     )
 
 
-@man_cmd(pattern="upcoming$")
+@ken_cmd(pattern="upcoming$")
 async def upcoming(message):
     rep = "<b>Upcoming anime</b>\n"
     later = jikan.season_later()
@@ -389,7 +389,7 @@ async def upcoming(message):
         await edit_or_reply(message, rep, parse_mode="html")
 
 
-@man_cmd(pattern="whatanime$")
+@ken_cmd(pattern="whatanime$")
 async def whatanime(e):
     media = e.media
     if not media:
@@ -470,24 +470,24 @@ def is_gif(file):
 CMD_HELP.update(
     {
         "anime": f"**Plugin : **`anime`\
-        \n\n  •  **Syntax :** `{cmd}anilist` **<nama anime>**\
-        \n  •  **Function : **Mencari informasi anime dari anilist\
-        \n\n  •  **Syntax :** `{cmd}anime` **<nama anime>**\
-        \n  •  **Function : **Mencari infomasi anime.\
-        \n\n  •  **Syntax :** `{cmd}manga` **<manga name>**\
-        \n  •  **Function : **Menari informasi manga.\
-        \n\n  •  **Syntax :** `{cmd}akaizoku` atau `.akayo` **<nama anime>**\
-        \n  •  **Function : **Mencari anime dan memberikan link tautan Unduh Anime.\
-        \n\n  •  **Syntax :** `{cmd}char` **<nama character anime>**\
-        \n  •  **Function : **Mencari informasi karakter anime.\
-        \n\n  •  **Syntax :** `{cmd}upcoming`\
-        \n  •  **Function : **Mencari informasi Anime yang akan datang.\
-        \n\n  •  **Syntax :** `{cmd}scanime` **<nama anime>** atau `.sanime` **<nama anime>**\
-        \n  •  **Function : **Mencari anime\
-        \n\n  •  **Syntax :** `{cmd}smanga` **<manga>**\
-        \n  •  **Function : **Untuk mencari akun terhapus dalam grup\
-        \n\n  •  **Syntax :** `{cmd}whatanime` **<Reply Gambar scene Anime.>**\
-        \n  •  **Function : **Temukan anime dari file media.\
+        \n\n  ×  **Example :** `{cmd}anilist` **<nama anime>**\
+        \n  ×  **Function : **Mencari informasi anime dari anilist\
+        \n\n  ×  **Example :** `{cmd}anime` **<nama anime>**\
+        \n  ×  **Function : **Mencari infomasi anime.\
+        \n\n  ×  **Example :** `{cmd}manga` **<manga name>**\
+        \n  ×  **Function : **Menari informasi manga.\
+        \n\n  ×  **Example :** `{cmd}akaizoku` atau `.akayo` **<nama anime>**\
+        \n  ×  **Function : **Mencari anime dan memberikan link tautan Unduh Anime.\
+        \n\n  ×  **Example :** `{cmd}char` **<nama character anime>**\
+        \n  ×  **Function : **Mencari informasi karakter anime.\
+        \n\n  ×  **Example :** `{cmd}upcoming`\
+        \n  ×  **Function : **Mencari informasi Anime yang akan datang.\
+        \n\n  ×  **Example :** `{cmd}scanime` **<nama anime>** atau `.sanime` **<nama anime>**\
+        \n  ×  **Function : **Mencari anime\
+        \n\n  ×  **Example :** `{cmd}smanga` **<manga>**\
+        \n  ×  **Function : **Untuk mencari akun terhapus dalam grup\
+        \n\n  ×  **Example :** `{cmd}whatanime` **<Reply Gambar scene Anime.>**\
+        \n  ×  **Function : **Temukan anime dari file media.\
     "
     }
 )
