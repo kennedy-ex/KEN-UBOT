@@ -27,7 +27,7 @@ from telethon.tl.types import (
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, SUDO_USERS, TEMP_DOWNLOAD_DIRECTORY
-from userbot.utils import edit_delete, edit_or_reply, man_cmd
+from userbot.utils import edit_delete, edit_or_reply, ken_cmd
 
 normiefont = [
     "a",
@@ -92,7 +92,7 @@ thumb_image_path = TEMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 name = "Profile Photos"
 
 
-@man_cmd(pattern="app(?: |$)(.*)")
+@ken_cmd(pattern="app(?: |$)(.*)")
 async def apk(e):
     xx = await edit_or_reply(e, "`Processing...`")
     try:
@@ -157,7 +157,7 @@ async def apk(e):
         await edit_delete(xx, "Exception Occured:- " + str(err))
 
 
-@man_cmd(pattern="calc(?: |$)(.*)")
+@ken_cmd(pattern="calc(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -194,7 +194,7 @@ async def _(event):
         await xx.edit("**Ketik** `.help calc` **bila butuh bantuan**")
 
 
-@man_cmd(pattern="xcd(?: |$)(.*)")
+@ken_cmd(pattern="xcd(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -240,7 +240,7 @@ Year: {}""".format(
         await edit_delete(xx, "xkcd n.{} not found!".format(xkcd_id))
 
 
-@man_cmd(pattern="remove(?: |$)(.*)")
+@ken_cmd(pattern="remove(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -407,7 +407,7 @@ async def ban_user(chat_id, i, rights):
         return False, str(exc)
 
 
-@man_cmd(pattern="rnupload(?: |$)(.*)")
+@ken_cmd(pattern="rnupload(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -453,7 +453,7 @@ async def _(event):
         await edit_delete(xx, "Syntax // .rnupload filename.extension <reply ke media>")
 
 
-@man_cmd(pattern="grab(?: |$)(.*)")
+@ken_cmd(pattern="grab(?: |$)(.*)")
 async def potocmd(event):
     id = "".join(event.raw_text.split(maxsplit=2)[1:])
     user = await event.get_reply_message()
@@ -486,7 +486,7 @@ async def potocmd(event):
             return await edit_delete(xx, "**Tidak Dapat Menemukan Foto Pengguna Ini**")
 
 
-@man_cmd(pattern="res(?: |$)(.*)")
+@ken_cmd(pattern="res(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -583,7 +583,7 @@ def get_provider(url):
     return url
 
 
-@man_cmd(pattern="watch(?: |$)(.*)")
+@ken_cmd(pattern="watch(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -633,7 +633,7 @@ async def _(event):
 # Modified by :- @kirito6969,@deleteduser420
 
 
-@man_cmd(pattern="weeb(?: |$)(.*)")
+@ken_cmd(pattern="weeb(?: |$)(.*)")
 async def weebify(event):
     args = event.pattern_match.group(1)
     if not args:
@@ -680,7 +680,7 @@ boldfont = [
 ]
 
 
-@man_cmd(pattern="bold(?: |$)(.*)")
+@ken_cmd(pattern="bold(?: |$)(.*)")
 async def thicc(bolded):
     args = bolded.pattern_match.group(1)
     if not args:
@@ -727,7 +727,7 @@ medievalbold = [
 ]
 
 
-@man_cmd(pattern="medibold(?: |$)(.*)")
+@ken_cmd(pattern="medibold(?: |$)(.*)")
 async def mediv(medievalx):
     args = medievalx.pattern_match.group(1)
     if not args:
@@ -776,7 +776,7 @@ doublestruckt = [
 ]
 
 
-@man_cmd(pattern="doublestruck(?: |$)(.*)")
+@ken_cmd(pattern="doublestruck(?: |$)(.*)")
 async def doublex(doublestrucktx):
     args = doublestrucktx.pattern_match.group(1)
     if not args:
@@ -825,7 +825,7 @@ cursiveboldx = [
 ]
 
 
-@man_cmd(pattern="curbold(?: |$)(.*)")
+@ken_cmd(pattern="curbold(?: |$)(.*)")
 async def cursive2(cursivebolded):
     args = cursivebolded.pattern_match.group(1)
     if not args:
@@ -875,7 +875,7 @@ medival2 = [
 ]
 
 
-@man_cmd(pattern="medi(?: |$)(.*)")
+@ken_cmd(pattern="medi(?: |$)(.*)")
 async def medival22(medivallite):
     args = medivallite.pattern_match.group(1)
     if not args:
@@ -923,7 +923,7 @@ cursive = [
 ]
 
 
-@man_cmd(pattern="cur(?: |$)(.*)")
+@ken_cmd(pattern="cur(?: |$)(.*)")
 async def xcursive(cursivelite):
     args = cursivelite.pattern_match.group(1)
     if not args:
@@ -982,26 +982,26 @@ CMD_HELP.update(
 CMD_HELP.update(
     {
         "bannedall": f"**Plugin : **`bannedall`.\
-        \n\n  •  **Syntax :** `{cmd}remove`\
-        \n  •  **Function : **Untuk Menganalisa user dari grup secara spesifik\
-        \n\n  •  **Syntax :** `{cmd}remove d`\
-        \n  •  **Function : **Untuk mengkik user dari grup secara spesifik\
-        \n\n  •  **Syntax :** `{cmd}remove y`\
-        \n  •  **Function : **Untuk Membanned Akun yang Terakhir Dilihat setahun yang lalu\
-        \n\n  •  **Syntax :** `{cmd}remove m`\
-        \n  •  **Function : **Untuk Membanned Akun yang Terakhir Dilihat sebulan yang lalu\
-        \n\n  •  **Syntax :** `{cmd}remove w`\
-        \n  •  **Function : **Untuk Membanned Akun yang Terakhir Dilihat seminggu yang lalu\
-        \n\n  •  **Syntax :** `{cmd}remove o`\
-        \n  •  **Function : **Untuk Membanned Akun yang sedang offline\
-        \n\n  •  **Syntax :** `{cmd}remove q`\
-        \n  •  **Function : **Untuk Membanned Akun yang sedang online\
-        \n\n  •  **Syntax :** `{cmd}remove r`\
-        \n  •  **Function : **Untuk Membanned Akun yang terakhir dilihat\
-        \n\n  •  **Syntax :** `{cmd}remove b`\
-        \n  •  **Function : **Untuk Membanned Bot yang ada di Grup chat\
-        \n\n  •  **Syntax :** `{cmd}remove n`\
-        \n  •  **Function : **Untuk Membanned Akun yang Last Seen A Long Time Ago\
+        \n\n  ×  **Example :** `{cmd}remove`\
+        \n  ×  **Function : **Untuk Menganalisa user dari grup secara spesifik\
+        \n\n  ×  **Example :** `{cmd}remove d`\
+        \n  ×  **Function : **Untuk mengkik user dari grup secara spesifik\
+        \n\n  ×  **Example :** `{cmd}remove y`\
+        \n  ×  **Function : **Untuk Membanned Akun yang Terakhir Dilihat setahun yang lalu\
+        \n\n  ×  **Example :** `{cmd}remove m`\
+        \n  ×  **Function : **Untuk Membanned Akun yang Terakhir Dilihat sebulan yang lalu\
+        \n\n  ×  **Example :** `{cmd}remove w`\
+        \n  ×  **Function : **Untuk Membanned Akun yang Terakhir Dilihat seminggu yang lalu\
+        \n\n  ×  **Example :** `{cmd}remove o`\
+        \n  ×  **Function : **Untuk Membanned Akun yang sedang offline\
+        \n\n  ×  **Example :** `{cmd}remove q`\
+        \n  ×  **Function : **Untuk Membanned Akun yang sedang online\
+        \n\n  ×  **Example :** `{cmd}remove r`\
+        \n  ×  **Function : **Untuk Membanned Akun yang terakhir dilihat\
+        \n\n  ×  **Example :** `{cmd}remove b`\
+        \n  ×  **Function : **Untuk Membanned Bot yang ada di Grup chat\
+        \n\n  ×  **Example :** `{cmd}remove n`\
+        \n  ×  **Function : **Untuk Membanned Akun yang Last Seen A Long Time Ago\
         \n\n **HATI HATI PLUGIN INI BERBAHAYA, MOHON GUNAKAN DENGAN BIJAK**\
     "
     }
@@ -1010,8 +1010,8 @@ CMD_HELP.update(
 CMD_HELP.update(
     {
         "rnupload": f"**Plugin : **`rnupload`\
-        \n\n  •  **Syntax :** `{cmd}rnupload`\
-        \n  •  **Function : **Untuk Rename dan Upload, Balas Ke Media Dan Ketik .rnupload xyz.jpg\
+        \n\n  ×  **Example :** `{cmd}rnupload`\
+        \n  ×  **Function : **Untuk Rename dan Upload, Balas Ke Media Dan Ketik .rnupload xyz.jpg\
     "
     }
 )
