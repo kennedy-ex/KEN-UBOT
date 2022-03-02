@@ -12,12 +12,12 @@ from telethon.tl.types import DocumentAttributeFilename
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import bash, edit_delete, edit_or_reply, man_cmd
+from userbot.utils import bash, edit_delete, edit_or_reply, ken_cmd
 
 bground = "black"
 
 
-@man_cmd(pattern="(ascii|asciis)$")
+@ken_cmd(pattern="(ascii|asciis)$")
 async def _(event):
     if not event.reply_to_msg_id:
         return await edit_delete(event, "**Mohon Balas Ke Media..**")
@@ -118,7 +118,7 @@ async def random_color():
     ]
 
 
-@man_cmd(pattern="asciibg(?: |$)(.*)")
+@ken_cmd(pattern="asciibg(?: |$)(.*)")
 async def _(event):
     BG = event.pattern_match.group(1)
     if BG.isnumeric():
@@ -133,12 +133,12 @@ async def _(event):
 CMD_HELP.update(
     {
         "ascii": f"**Plugin : **`ascii`\
-        \n\n  •  **Syntax :** `{cmd}ascii`\
-        \n  •  **Function : **Buat Ascii Art Dari Media.\
-        \n\n  •  **Syntax :** `{cmd}asciis`\
-        \n  •  **Function : **Sama Tapi Unggah Hasilnya Sebagai Sticker.\
-        \n\n  •  **Syntax :** `{cmd}asciibg` <color>\
-        \n  •  **Function : **Untuk Mengubah Warna Background Dari Modul Ascii Contoh `.asciibg black`.\
+        \n\n  ×  **Example :** `{cmd}ascii`\
+        \n  ×  **Function : **Buat Ascii Art Dari Media.\
+        \n\n  ×  **Example :** `{cmd}asciis`\
+        \n  ×  **Function : **Sama Tapi Unggah Hasilnya Sebagai Sticker.\
+        \n\n  ×  **Example :** `{cmd}asciibg` <color>\
+        \n  ×  **Function : **Untuk Mengubah Warna Background Dari Modul Ascii Contoh `.asciibg black`.\
     "
     }
 )
