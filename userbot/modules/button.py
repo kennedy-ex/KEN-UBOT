@@ -10,14 +10,14 @@ from telethon import Button
 from userbot import BOT_USERNAME
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, tgbot
-from userbot.utils import edit_delete, man_cmd, reply_id
+from userbot.utils import edit_delete, ken_cmd, reply_id
 
 # regex obtained from:
 # https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 
-@man_cmd(pattern="cbutton(?:\\s|$)([\\s\\S]*)")
+@ken_cmd(pattern="cbutton(?:\\s|$)([\\s\\S]*)")
 async def _(event):
     reply_message = await event.get_reply_message()
     if reply_message:
@@ -68,7 +68,7 @@ async def _(event):
         os.remove(tgbot_reply_message)
 
 
-@man_cmd(pattern="ibutton(?:\\s|$)([\\s\\S]*)")
+@ken_cmd(pattern="ibutton(?:\\s|$)([\\s\\S]*)")
 async def _(event):
     reply_to_id = await reply_id(event)
     reply_message = await event.get_reply_message()
@@ -101,11 +101,11 @@ CMD_HELP.update(
         "button": f"**Plugin : **`button`\
         \n\n  •  **Syntax :** `{cmd}cbutton` <text> [Name on button]<buttonurl:link you want to open>\
         \n  •  **Function : **Untuk membuat pesan button\
-        \n  •  **Examples : **`{cmd}cbutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/Lunatic0de:same> [Support]<buttonurl:https://t.me/SharingUserbot>`\
+        \n  •  **Examples : **`{cmd}cbutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/ypurlilboy> [Support]<buttonurl:https://t.me/emikosupport>`\
         \n  •  **NOTE :** Untuk menggunakan ini, anda memerlukan bot anda ({BOT_USERNAME}) harus ada di grup/channel di mana anda menggunakan\
         \n\n  •  **Syntax :** `{cmd}ibutton` <text> [Name on button]<buttonurl:link you want to open>\
         \n  •  **Function : **Untuk membuat pesan button melalui inline\
-        \n  •  **Examples : **`{cmd}ibutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/Lunatic0de:same> [Support]<buttonurl:https://t.me/SharingUserbot>`\
+        \n  •  **Examples : **`{cmd}ibutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/yourlilboy:same> [Support]<buttonurl:https://t.me/emikosupport>`\
     "
     }
 )
