@@ -42,7 +42,7 @@ brb = [
     "**Jangan off dong bang.**",
     "**Bang, mau kemana?**",
     "**Jangan lama lama bang**",
-    "*#Siap bang.**",
+    "**Siap bang.**",
     "**Yah udah off aja bang.**",
     "**Off lagi, mau ngewe ya?**",
     "**Bang developer, lagi ange kah?** ",
