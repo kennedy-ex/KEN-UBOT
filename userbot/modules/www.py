@@ -31,7 +31,7 @@ gesss = [
     "**Hadir kak 😉**",
     "**Hadir bang 😁**",
     "**Hadir bang maap telat 🥺**",
-    "*$Saya slalu ada buat Tuan Owner🥵**",
+    "**Saya slalu ada buat Tuan Owner🥵**",
     "**Jangan kemana mana lagi ya bang**",
     "**Pas banget bang, aku lagi kangen**",
     "**Bang owner on juga akhirnya🥵**",
